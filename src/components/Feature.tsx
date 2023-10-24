@@ -1,19 +1,20 @@
 import React from "react";
+import AssistantView from "../assets/images/AssistantView.png";
 
 const Feature = () => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="p-4 lg:p-0 text-gray-600 body-font flex items-center justify-center lg:h-screen flex-col">
       <div className="container px-5 py-24 mx-auto flex flex-wrap">
         <div className="w-full text-center">
           <h1 className="text-3xl lg:text-4xl py-10 text-gray-900">
             Introducing FAM Personal Assistant!
           </h1>
         </div>
-        <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+        <div className="w-1/2 lg:w-1/4 mx-auto mb-10 p-10 lg:p-0 lg:mb-0 rounded-lg overflow-hidden">
           <img
             alt="feature"
             className="object-cover object-center h-full w-full"
-            src="https://dummyimage.com/460x500"
+            src={AssistantView}
           />
         </div>
         <div className="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">

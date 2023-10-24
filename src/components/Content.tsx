@@ -1,5 +1,8 @@
 import React from "react";
-
+import BudgetView from "../assets/images/BudgetView.png";
+import CalendarView from "../assets/images/CalendarView.png";
+import SubscriptionView from "../assets/images/SubscriptionTrackerView.png";
+import ImagesView from "../assets/images/ImagesView.png";
 const Content = () => {
   return (
     <section className="text-gray-600 body-font">
@@ -22,8 +25,8 @@ const Content = () => {
           <div className="xl:w-1/4 md:w-1/2 p-4">
             <div className="bg-gray-100 p-6 rounded-lg">
               <img
-                className="h-40 rounded w-full object-cover object-center mb-6"
-                src="https://dummyimage.com/720x400"
+                className="h-1000 rounded w-full object-cover object-center mb-6"
+                src={CalendarView}
                 alt="content"
               />
               <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
@@ -42,8 +45,8 @@ const Content = () => {
           <div className="xl:w-1/4 md:w-1/2 p-4">
             <div className="bg-gray-100 p-6 rounded-lg">
               <img
-                className="h-40 rounded w-full object-cover object-center mb-6"
-                src="https://dummyimage.com/721x401"
+                className="h-1000 rounded w-full object-cover object-center mb-6"
+                src={ImagesView}
                 alt="content"
               />
               <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
@@ -62,8 +65,8 @@ const Content = () => {
           <div className="xl:w-1/4 md:w-1/2 p-4">
             <div className="bg-gray-100 p-6 rounded-lg">
               <img
-                className="h-40 rounded w-full object-cover object-center mb-6"
-                src="https://dummyimage.com/722x402"
+                className="h-1000 rounded w-full object-cover object-center mb-6"
+                src={SubscriptionView}
                 alt="content"
               />
               <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
@@ -82,8 +85,8 @@ const Content = () => {
           <div className="xl:w-1/4 md:w-1/2 p-4">
             <div className="bg-gray-100 p-6 rounded-lg">
               <img
-                className="h-40 rounded w-full object-cover object-center mb-6"
-                src="https://dummyimage.com/723x403"
+                className="h-1000 rounded w-full object-cover object-center mb-6"
+                src={BudgetView}
                 alt="content"
               />
               <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">

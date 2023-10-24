@@ -1,4 +1,6 @@
 import React from "react";
+import Apoorv from "../assets/images/Apoorv.png";
+import Aayush from "../assets/images/Aayush.png";
 
 const Team = () => {
   return (
@@ -19,16 +21,23 @@ const Team = () => {
               <img
                 alt="team"
                 className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                src="https://dummyimage.com/200x200"
+                src={Aayush}
               />
               <div className="flex-grow sm:pl-8">
                 <h2 className="title-font font-medium text-lg text-gray-900">
                   Aayush Dani
                 </h2>
                 <h3 className="text-gray-500 mb-3">Founder and CEO</h3>
-                <p className="mb-4">he&apos;s a cool dude.</p>
+                <p className="mb-4">
+                  Aayush is a Senior Software Engineer and Business Leader with
+                  more than five years of expertise in crafting software
+                  solutions for a wide range of industries. His experience
+                  encompasses roles in multinational corporations, innovative
+                  startups, and a spell as a freelancer where he built and sold
+                  a college student counseling platform at the age of 18.
+                </p>
                 <span className="inline-flex">
-                  <a className="text-gray-500">
+                  <a href="/" className="text-gray-500">
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -76,14 +85,21 @@ const Team = () => {
               <img
                 alt="team"
                 className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                src="https://dummyimage.com/201x201"
+                src={Apoorv}
               />
               <div className="flex-grow sm:pl-8">
                 <h2 className="title-font font-medium text-lg text-gray-900">
                   Apoorv Pachori
                 </h2>
                 <h3 className="text-gray-500 mb-3">CTO and Founder</h3>
-                <p className="mb-4">also a cool dude.</p>
+                <p className="mb-4">
+                  Apoorv is a Senior Software Engineer with more than four years
+                  of expertise in delivering top-tier software solutions. His
+                  experience encompasses roles in both multinational
+                  corporations and innovative startups, where he has
+                  consistently provided pivotal contributions, advancing the
+                  projects he's engaged with.
+                </p>
                 <span className="inline-flex">
                   <a className="text-gray-500">
                     <svg

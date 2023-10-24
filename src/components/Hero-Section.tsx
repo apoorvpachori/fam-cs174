@@ -1,5 +1,5 @@
 import React from "react";
-
+import FamilyDrawing from "../assets/images/familydrawing.png";
 const HeroSection = () => {
   return (
     <section className="text-gray-600 body-font">
@@ -36,7 +36,7 @@ const HeroSection = () => {
           <img
             className="object-cover object-center rounded"
             alt="hero"
-            src="https://dummyimage.com/720x600"
+            src={FamilyDrawing}
           />
         </div>
       </div>
