@@ -1,3 +1,5 @@
+import firebaseApp from "./firebase";
+
 import CallToAction from "./components/CallToAction";
 import Content from "./components/Content";
 import Feature from "./components/Feature";
