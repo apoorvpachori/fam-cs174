@@ -1,5 +1,4 @@
 import CallToAction from "./components/CallToAction";
-import Content from "./components/Content";
 import Feature from "./components/Feature";
 import HeroSection from "./components/Hero-Section";
 import Team from "./components/Team";
@@ -11,11 +10,8 @@ function App() {
       <div id="hero-section">
         <HeroSection />
       </div>
-      <div id="call-to-action">
-        <SwiperComponent />
-      </div>
       <div id="content">
-        <Content />
+        <SwiperComponent />
       </div>
       <div id="feature">
         <Feature />

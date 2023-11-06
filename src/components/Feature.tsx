@@ -10,7 +10,7 @@ const Feature = () => {
             Introducing FAM Personal Assistant!
           </h1>
         </div>
-        <div className="w-1/2 lg:w-1/4 mx-auto mb-10 p-10 lg:p-0 lg:mb-0 rounded-lg overflow-hidden">
+        <div className="lg:w-1/4 mx-auto mb-10 p-10 lg:p-0 lg:mb-0 rounded-lg overflow-hidden">
           <img
             alt="feature"
             className="object-cover object-center h-full w-full"
