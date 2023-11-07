@@ -3,14 +3,14 @@ import AssistantView from "../assets/images/AssistantView.png";
 
 const Feature = () => {
   return (
-    <section className="p-4 lg:p-0 text-gray-600 body-font flex items-center justify-center lg:h-screen flex-col">
-      <div className="container px-5 py-24 mx-auto flex flex-wrap">
+    <section className="lg:h-50 p-8 text-gray-600 body-font flex items-start justify-center flex-col">
+      <div className="container mx-auto flex flex-wrap ">
         <div className="w-full text-center">
-          <h1 className="text-3xl lg:text-4xl py-10 text-gray-900">
+          <h1 className="text-3xl lg:text-4xl pb-10 text-gray-900">
             Introducing FAM Personal Assistant!
           </h1>
         </div>
-        <div className="lg:w-1/4 mx-auto mb-10 p-10 lg:p-0 lg:mb-0 rounded-lg overflow-hidden">
+        <div className="w-1/2 lg:w-1/4 mx-auto mb-10 p-10 lg:p-0 lg:mb-0 rounded-lg overflow-hidden">
           <img
             alt="feature"
             className="object-cover object-center h-full w-full"

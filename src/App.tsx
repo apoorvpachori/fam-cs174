@@ -2,26 +2,52 @@ import CallToAction from "./components/CallToAction";
 import Feature from "./components/Feature";
 import HeroSection from "./components/Hero-Section";
 import Team from "./components/Team";
-import SwiperComponent from "./components/Swiper";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { motion } from "framer-motion";
 
 function App() {
   return (
     <main>
-      <div id="hero-section">
+      <div id="home" />
+      <Header />
+      <motion.div
+        id="hero-section"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        // viewport={{ once: true }}
+      >
         <HeroSection />
-      </div>
-      <div id="content">
-        <SwiperComponent />
-      </div>
-      <div id="feature">
+      </motion.div>
+      <motion.div
+        id="feature"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        // viewport={{ once: true }}
+      >
         <Feature />
-      </div>
-      <div id="team">
+      </motion.div>
+      <motion.div
+        id="team"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        // viewport={{ once: true }}
+      >
         <Team />
-      </div>
-      <div id="call-to-action">
+      </motion.div>
+      <motion.div
+        id="call-to-action"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        // viewport={{ once: true }}
+      >
         <CallToAction />
-      </div>
+      </motion.div>
+      <Footer />
     </main>
   );
 }
