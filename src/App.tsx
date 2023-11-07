@@ -6,6 +6,18 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { motion } from "framer-motion";
 
+const parentVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      when: "beforeChildren",
+      staggerChildren: 1,
+    },
+  },
+};
+
 function App() {
   return (
     <main>
@@ -13,37 +25,37 @@ function App() {
       <Header />
       <motion.div
         id="hero-section"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-        // viewport={{ once: true }}
+        variants={parentVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
       >
         <HeroSection />
       </motion.div>
       <motion.div
         id="feature"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-        // viewport={{ once: true }}
+        variants={parentVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
       >
         <Feature />
       </motion.div>
       <motion.div
         id="team"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-        // viewport={{ once: true }}
+        variants={parentVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
       >
         <Team />
       </motion.div>
       <motion.div
         id="call-to-action"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-        // viewport={{ once: true }}
+        variants={parentVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
       >
         <CallToAction />
       </motion.div>

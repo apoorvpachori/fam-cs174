@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
+import { motion } from "framer-motion";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import Parents from "../assets/images/parents.svg";
+
 const Header = () => {
   const scrollPosition = useScrollPosition();
 
@@ -25,21 +25,38 @@ const Header = () => {
           <span className="ml-3 text-xl">FAM</span>
         </a>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <a href="#home" className="mr-5 hover:text-gray-900">
+          <motion.a
+            href="#home"
+            className="mr-5 hover:text-gray-900"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95, rotate: "2.5deg" }}
+          >
             Home
-          </a>
-          <a href="#feature" className="mr-5 hover:text-gray-900">
+          </motion.a>
+          <motion.a
+            href="#feature"
+            className="mr-5 hover:text-gray-900"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95, rotate: "2.5deg" }}
+          >
             FAM Personal Assistant
-          </a>
-          <a href="#team" className="mr-5 hover:text-gray-900">
+          </motion.a>
+          <motion.a
+            href="#team"
+            className="mr-5 hover:text-gray-900"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95, rotate: "2.5deg" }}
+          >
             Team
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="#call-to-action"
             className="mr-5  bg-indigo-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-indigo-200 rounded text-base mt-4 md:mt-0"
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.95, rotate: "2.5deg" }}
           >
             Sign Up!
-          </a>
+          </motion.a>
         </nav>
       </div>
     </header>

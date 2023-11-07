@@ -161,12 +161,11 @@ const Team = () => {
                   ecosystem. His work in venture capital includes leading
                   early-stage investments in two companies in healthtech and
                   fintech that have doubled in valuation ($30M and $96M). He has
-                  also advised startups in the hospitality and education spaces
-                  to win pitch competitions with Google and Project Pitch It, as
-                  well as set the product strategy for a healthtech startup that
-                  got accepted to TechStars accelerator. Michael is certified in
-                  product management and has additional experience developing
-                  mobile applications
+                  also advised startups to win pitch competitions with Google
+                  and Project Pitch It, as well as set the product strategy for
+                  a healthtech startup that got accepted to TechStars
+                  accelerator. Michael is certified in product management and
+                  has additional experience developing mobile applications.
                 </p>
                 <span className="inline-flex">
                   <a className="text-gray-500">
