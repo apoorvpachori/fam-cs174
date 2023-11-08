@@ -11,4 +11,11 @@
   }
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjust the value if your header height changes */
+
+  }
+  /* or */
+  
+  body {
+    scroll-padding-top: 80px; /* Adjust the value if your header height changes */
   }

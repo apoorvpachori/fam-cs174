@@ -5,6 +5,7 @@ import Team from "./components/Team/Team";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { motion } from "framer-motion";
+import "./styles/globals.css";
 
 const parentVariants = {
   hidden: { opacity: 0 },
@@ -21,10 +22,9 @@ const parentVariants = {
 function App() {
   return (
     <main>
-      <div id="home" />
       <Header />
       <motion.div
-        id="hero-section"
+        id="home"
         variants={parentVariants}
         initial="hidden"
         whileInView="visible"
@@ -32,6 +32,7 @@ function App() {
       >
         <HeroSection />
       </motion.div>
+
       <motion.div
         id="feature"
         variants={parentVariants}
