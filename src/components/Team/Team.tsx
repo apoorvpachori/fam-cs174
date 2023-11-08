@@ -5,18 +5,6 @@ import Micheal from "../../assets/images/micheal.png";
 import { motion, useAnimation } from "framer-motion";
 
 const Team = () => {
-  const controls = useAnimation();
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
-  }, [controls, isInView]);
-
-  const onInView = () => {
-    setIsInView(true);
-  };
   const featureVariants = {
     hidden: {
       x: -50, // how far the children start from the left
@@ -30,11 +18,10 @@ const Team = () => {
         stiffness: 100, // optional, adjust spring stiffness
       },
     },
-    // Add additional animations here
   };
 
   const parentVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
@@ -50,9 +37,8 @@ const Team = () => {
         className="container px-5 py-24 mx-auto"
         variants={parentVariants}
         initial="hidden"
-        animate={controls}
-        onViewportEnter={onInView}
-        viewport={{ once: true, amount: 0.5 }}
+        whileInView="visible"
+        viewport={{ amount: 0.25, once: true }}
       >
         <div className="flex flex-col text-center w-full mb-20">
           <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">
