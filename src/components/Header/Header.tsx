@@ -21,7 +21,7 @@ const Header = () => {
               alt="parentsicon"
               className="w-full h-full object-cover"
             />
-          </div>{" "}
+          </div>
           <span className="ml-3 text-xl">FAM</span>
         </a>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">

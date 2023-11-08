@@ -1,22 +1,70 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Apoorv from "../../assets/images/Apoorv.png";
 import Aayush from "../../assets/images/Aayush.png";
 import Micheal from "../../assets/images/micheal.png";
+import { motion, useAnimation } from "framer-motion";
+
 const Team = () => {
+  const controls = useAnimation();
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [controls, isInView]);
+
+  const onInView = () => {
+    setIsInView(true);
+  };
+  const featureVariants = {
+    hidden: {
+      x: -50, // how far the children start from the left
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring", // optional, for a springy effect
+        stiffness: 100, // optional, adjust spring stiffness
+      },
+    },
+    // Add additional animations here
+  };
+
+  const parentVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.3, // This will create the staggered effect
+      },
+    },
+  };
+
   return (
     <section className="text-gray-600 body-font bg-blue-100">
-      <div className="container px-5 py-24 mx-auto">
+      <motion.div
+        className="container px-5 py-24 mx-auto"
+        variants={parentVariants}
+        initial="hidden"
+        animate={controls}
+        onViewportEnter={onInView}
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <div className="flex flex-col text-center w-full mb-20">
           <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">
             MEET OUR FAM
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
             Meet our dedicated and highly-skilled team, committed to delivering
-            software excellence in every solution.
+            satisfaction to the highest degree!
           </p>
         </div>
         <div className="flex flex-wrap -m-4">
-          <div className="p-4 lg:w-1/2">
+          <motion.div className="p-4 lg:w-1/2" variants={featureVariants}>
             <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
               <img
                 alt="team"
@@ -79,8 +127,8 @@ const Team = () => {
                 </span>
               </div>
             </div>
-          </div>
-          <div className="p-4 lg:w-1/2">
+          </motion.div>
+          <motion.div className="p-4 lg:w-1/2" variants={featureVariants}>
             <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
               <img
                 alt="team"
@@ -143,8 +191,11 @@ const Team = () => {
                 </span>
               </div>
             </div>
-          </div>
-          <div className="p-4 lg:w-1/2 mx-auto">
+          </motion.div>
+          <motion.div
+            className="p-4 lg:w-1/2 mx-auto"
+            variants={featureVariants}
+          >
             <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
               <img
                 alt="team"
@@ -210,9 +261,9 @@ const Team = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

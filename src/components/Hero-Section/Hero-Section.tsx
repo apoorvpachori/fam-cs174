@@ -19,7 +19,7 @@ const HeroSection = () => {
           <h1 className="title-font sm:text-5xl text-4xl mb-4 font-medium text-gray-900">
             Unite, Organize, Thrive:
             <br className="hidden lg:inline-block" />
-            Welcome to the Future of Family!
+            Your family in your pocket!
           </h1>
           <p className="mb-8 leading-relaxed">
             Transform how your family connects with FAM! Think of it as the

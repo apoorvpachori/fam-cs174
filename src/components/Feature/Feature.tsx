@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AssistantView from "../../assets/images/AssistantView.png";
-import { useAnimation, motion, delay } from "framer-motion";
+import { useAnimation, motion } from "framer-motion";
 const Feature = () => {
   const controls = useAnimation();
   const [isInView, setIsInView] = useState(false);
