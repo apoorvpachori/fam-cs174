@@ -1,9 +1,9 @@
-import CallToAction from "./components/CallToAction";
-import Feature from "./components/Feature";
-import HeroSection from "./components/Hero-Section";
-import Team from "./components/Team";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import CallToAction from "./components/CallToAction/CallToAction";
+import Feature from "./components/Feature/Feature";
+import HeroSection from "./components/Hero-Section/Hero-Section";
+import Team from "./components/Team/Team";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import { motion } from "framer-motion";
 
 const parentVariants = {
