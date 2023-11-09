@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AssistantView from "../../assets/images/AssistantView.png";
+import AssistantView from "../../../assets/images/AssistantView.png";
 import { useAnimation, motion } from "framer-motion";
 const Feature = () => {
   const controls = useAnimation();

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import firebaseApp from "../../firebase";
+import firebaseApp from "../../../firebase";
 
 import { getDatabase, ref, push } from "firebase/database";
 import Swal from "sweetalert2";

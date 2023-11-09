@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { useScrollPosition } from "../../hooks/useScrollPosition";
-import Parents from "../../assets/images/parents.svg";
-
+import { useScrollPosition } from "../../../hooks/useScrollPosition";
+import Parents from "../../../assets/images/parents.svg";
+import { Link } from "react-router-dom";
 const Header = () => {
   const scrollPosition = useScrollPosition();
 
@@ -49,14 +49,15 @@ const Header = () => {
           >
             Team
           </motion.a>
-          <motion.a
-            href="#call-to-action"
-            className="mr-5  bg-indigo-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-indigo-200 rounded text-base mt-4 md:mt-0"
-            whileHover={{ scale: 1.15 }}
-            whileTap={{ scale: 0.95, rotate: "2.5deg" }}
-          >
-            Sign Up!
-          </motion.a>
+          <Link to="/login">
+            <motion.div
+              className="mr-5  bg-indigo-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-indigo-200 rounded text-base mt-4 md:mt-0"
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95, rotate: "2.5deg" }}
+            >
+              Sign Up!
+            </motion.div>
+          </Link>
         </nav>
       </div>
     </header>

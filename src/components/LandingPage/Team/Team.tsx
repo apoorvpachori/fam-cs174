@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Apoorv from "../../assets/images/Apoorv.png";
-import Aayush from "../../assets/images/Aayush.png";
-import Micheal from "../../assets/images/micheal.png";
+import Apoorv from "../../../assets/images/Apoorv.png";
+import Aayush from "../../../assets/images/Aayush.png";
+import Micheal from "../../../assets/images/micheal.png";
 import { motion, useAnimation } from "framer-motion";
 
 const Team = () => {

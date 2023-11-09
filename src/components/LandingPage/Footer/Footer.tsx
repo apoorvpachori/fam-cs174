@@ -1,4 +1,4 @@
-import Parents from "../../assets/images/parents.svg";
+import Parents from "../../../assets/images/parents.svg";
 
 const Footer = () => {
   return (

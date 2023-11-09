@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { motion } from "framer-motion";
-import HeroSwiper from "../Hero-Section/HeroSwiper";
+import HeroSwiper from "./HeroSwiper";
 
 const HeroSection = () => {
   return (

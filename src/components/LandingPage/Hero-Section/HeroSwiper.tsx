@@ -8,13 +8,13 @@ import {
   Autoplay,
 } from "swiper/modules";
 
-import ImagesView from "../../assets/images/ImagesView.png";
-import BudgetView from "../../assets/images/BudgetView.png";
-import CalendarView from "../../assets/images/CalendarView.png";
-import SubscriptionView from "../../assets/images/SubscriptionTrackerView.png";
-import CommandCenterView from "../../assets/images/CommandCenterView.png";
-import FamilyListsView from "../../assets/images/FamilyListsView.png";
-import DocumentStorageView from "../../assets/images/DocumentStorageView.png";
+import ImagesView from "../../../assets/images/ImagesView.png";
+import BudgetView from "../../../assets/images/BudgetView.png";
+import CalendarView from "../../../assets/images/CalendarView.png";
+import SubscriptionView from "../../../assets/images/SubscriptionTrackerView.png";
+import CommandCenterView from "../../../assets/images/CommandCenterView.png";
+import FamilyListsView from "../../../assets/images/FamilyListsView.png";
+import DocumentStorageView from "../../../assets/images/DocumentStorageView.png";
 
 import "./HeroSwiper.css";
 
