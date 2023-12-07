@@ -2,22 +2,52 @@
 
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const SignupPage = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [username, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
-  const handleLogin = async (event: any) => {
+  const handleRegister = async (event: any) => {
     event.preventDefault();
 
-    console.log(username);
+    console.log(email);
     console.log(password);
+    const userData = {
+      first_name: firstName,
+      last_name: lastName,
+      email, // Assuming 'username' is actually the user's email
+      password,
+    };
 
-    navigate("/home");
+    try {
+      // Making a POST request to the server
+      const response = await fetch("http://localhost:3001/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        // Handle successful registration here
+        Swal.fire("User registered successfully");
+        console.log(response);
+        navigate("/login");
+      } else {
+        // Handle errors (like user already exists, etc.)
+        const errorResponse = await response.json(); // Get more details from the response body
+        console.error("Registration error:", errorResponse);
+        Swal.fire(`Registration failed: ${errorResponse.message}`);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -104,7 +134,7 @@ const SignupPage = () => {
               <button
                 type="submit"
                 className="w-full bg-blue-500 text-white bg-primary-600 hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-                onClick={handleLogin}
+                onClick={handleRegister}
               >
                 Register
               </button>
