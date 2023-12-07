@@ -14,7 +14,7 @@ const LoginPage = () => {
     console.log(email);
     console.log(password);
 
-    navigate("/home");
+    navigate("/homepage");
   };
 
   return (
