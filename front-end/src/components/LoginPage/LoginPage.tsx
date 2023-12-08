@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -6,6 +6,15 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = sessionStorage.getItem("sessionToken");
+
+    if (token) {
+      navigate("/homepage");
+      return;
+    }
+  }, []);
 
   const handleLogin = async (event: any) => {
     event.preventDefault();

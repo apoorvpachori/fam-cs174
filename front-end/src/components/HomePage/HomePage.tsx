@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+interface UserData {
+  first_name: string;
+  last_name: string;
+  email: string;
+  // Add other user fields as needed
+}
+
 const HomePage = () => {
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState<UserData | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,20 +28,29 @@ const HomePage = () => {
 
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
           setUserData(data);
         } else {
           // Handle errors or token expiration
-          // sessionStorage.removeItem("sessionToken");
-          // navigate("/login");
+          sessionStorage.removeItem("sessionToken");
+          navigate("/login");
         }
       } catch (error) {
-        // console.error("Error fetching user data:", error);
-        // navigate("/login");
+        console.error("Error fetching user data:", error);
+        navigate("/login");
       }
     };
 
     fetchData();
   }, [navigate]);
+
+  const handleLogout = () => {
+    // Remove the token from sessionStorage
+    sessionStorage.removeItem("sessionToken");
+
+    // Navigate to the login page
+    navigate("/login");
+  };
 
   if (!userData) {
     return <div>Loading user data...</div>;
@@ -79,22 +95,26 @@ const HomePage = () => {
             <button className="text-white py-2 px-4 uppercase rounded bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
               Connect
             </button>
-            <button className="text-white py-2 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
-              Message
+            <button
+              onClick={handleLogout}
+              className="text-white py-2 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
+            >
+              Logout
             </button>
           </div>
         </div>
 
         <div className="mt-20 text-center border-b pb-12">
           <h1 className="text-4xl font-medium text-gray-700">
-            Jessica Jones, <span className="font-light text-gray-500">27</span>
+            {userData.first_name} {userData.last_name},{" "}
+            <span className="font-light text-gray-500">27</span>
           </h1>
-          <p className="font-light text-gray-600 mt-3">Bucharest, Romania</p>
+          <p className="font-light text-gray-600 mt-3">Your Location</p>
 
           <p className="mt-8 text-gray-500">
             Solution Manager - Creative Tim Officer
           </p>
-          <p className="mt-2 text-gray-500">University of Computer Science</p>
+          <p className="mt-2 text-gray-500">Your email is {userData.email}</p>
         </div>
 
         <div className="mt-12 flex flex-col justify-center">

@@ -20,7 +20,7 @@ const SignupPage = () => {
     const userData = {
       first_name: firstName,
       last_name: lastName,
-      email, // Assuming 'username' is actually the user's email
+      email,
       password,
     };
 
@@ -37,17 +37,14 @@ const SignupPage = () => {
       if (response.ok) {
         // Handle successful registration here
         Swal.fire("User registered successfully");
-        console.log(response);
+
         navigate("/login");
       } else {
         // Handle errors (like user already exists, etc.)
         const errorResponse = await response.json(); // Get more details from the response body
-        console.error("Registration error:", errorResponse);
         Swal.fire(`Registration failed: ${errorResponse.message}`);
       }
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    } catch (error) {}
   };
 
   return (
