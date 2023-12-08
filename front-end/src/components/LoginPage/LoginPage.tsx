@@ -1,7 +1,6 @@
-// In LoginPage.tsx
-
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -11,10 +10,37 @@ const LoginPage = () => {
   const handleLogin = async (event: any) => {
     event.preventDefault();
 
-    console.log(email);
-    console.log(password);
+    const loginData = {
+      email,
+      password,
+    };
 
-    navigate("/homepage");
+    try {
+      console.log(JSON.stringify(loginData));
+      // Making a POST request to the server for login
+      const response = await fetch("http://localhost:3001/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Assuming the token is in the 'token' field of the response
+        sessionStorage.setItem("sessionToken", data.token);
+        console.log(sessionStorage.getItem("sessionToken"));
+        navigate("/homepage");
+      } else {
+        console.log("Authentication error");
+        const errorResponse = await response.json();
+        Swal.fire("Invalid Credentials. Please try again.");
+      }
+    } catch (networkError) {
+      console.error("Network error:", networkError);
+      console.log("Network Error");
+    }
   };
 
   return (

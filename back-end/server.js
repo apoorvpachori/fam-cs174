@@ -68,6 +68,7 @@ app.post('/login', (req, res) => {
         }
 
         const user = results[0];
+        console.log(user);
         // Compare hashed password
         bcrypt.compare(password, user.password, (err, isMatch) => {
             if (err) {
@@ -75,12 +76,12 @@ app.post('/login', (req, res) => {
             } else if (isMatch) {
                 // res.status(200).send('Login successful');
                 // JWT Token generation
-                const token = jwt.sign({ userId: user.userId }, 'secret_key', { expiresIn: '1h' });
+                const token = jwt.sign({ userId: user.user_id }, 'secret_key', { expiresIn: '1h' });
                 res.json({ token });
 
             } else {
                 // Passwords do not match
-                res.status(401).send('Authentication failed');
+                res.status(401).send({ 'message': 'Authentication failed' });
             }
         });
     });
@@ -96,6 +97,40 @@ app.get('/', (req, res) => {
         }
     });
 });
+
+app.get('/user', (req, res) => {
+    // Extract the token from the Authorization header
+    const token = req.headers.authorization?.split(' ')[1];
+    console.log(token);
+    if (!token) {
+        return res.status(401).send({ message: 'No token provided.' });
+    }
+
+    // Verify the token
+    jwt.verify(token, 'secret_key', (err, decoded) => {
+        if (err) {
+            return res.status(401).send({ message: 'Failed to authenticate token.' });
+        }
+
+        // Token is valid, get user information
+        const userId = decoded.userId;
+        console.log("userid is " + userId);
+
+        db.query('SELECT first_name, last_name, email FROM users WHERE user_id = ?', [userId], (error, results) => {
+            if (error) {
+                return res.status(500).send({ message: 'Error fetching user data.' });
+            }
+
+            if (results.length === 0) {
+                return res.status(404).send({ message: 'User not found.' });
+            }
+
+            // Return user information
+            res.json(results[0]);
+        });
+    });
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

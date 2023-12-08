@@ -1,5 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const HomePage = () => {
+  const [userData, setUserData] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = sessionStorage.getItem("sessionToken");
+
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/user", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setUserData(data);
+        } else {
+          // Handle errors or token expiration
+          // sessionStorage.removeItem("sessionToken");
+          // navigate("/login");
+        }
+      } catch (error) {
+        // console.error("Error fetching user data:", error);
+        // navigate("/login");
+      }
+    };
+
+    fetchData();
+  }, [navigate]);
+
+  if (!userData) {
+    return <div>Loading user data...</div>;
+  }
+
   return (
     <div className="p-16">
       <div className="p-8 bg-white shadow mt-24">
